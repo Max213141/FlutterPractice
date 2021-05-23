@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -37,7 +38,7 @@ class _risingWindowState extends State<risingWindow> {
         elevation: 1.0,
         title: Text(
           // widget.name,
-            'ACCOMPLISHED'
+            'ALMOST COMPLETE'
         ),
         centerTitle: true,
         backgroundColor: Colors.red,
@@ -52,15 +53,23 @@ class _risingWindowState extends State<risingWindow> {
                   color: randomColor,
                   size: 400),
                 GestureDetector(
+                  child: IconButton(
+                    iconSize: 40,
+                    icon: const Icon(Icons.settings),
+                  ) ,
                   onTap:(){
                     setState(() {
-                      a = next(1,99);
-                      r = next(1,355);
-                      g = next(1,355);
-                      b = next(1,355);
+                      a = next(1,255);
+                      r = next(1,255);
+                      g = next(1,255);
+                      b = next(1,255);
                       randomColor = Color.fromARGB(a, r, g, b);
                     });
                   }
+                ),
+                Text(
+                  'Push to change color',
+                  style: TextStyle(fontSize: 24)
                 )
               ]
           )
